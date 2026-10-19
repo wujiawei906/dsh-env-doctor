@@ -72,10 +72,21 @@ ensure_environment(directory?, autoFix?, installDependencies?, allowRuntimeDownl
 
 ## 安装与卸载
 
-这是一个 DSH bundle 包，从 GitHub 直接安装即可（安装后重启一次 Harness 生效）：
+这是一个 DSH bundle 包，从 GitHub 安装（注意 `git+` 前缀；安装后重启一次 Harness 生效）：
 
 ```powershell
-dsh plugin --profile desktop add https://github.com/wujiawei906/dsh-env-doctor
+dsh plugin --profile desktop add git+https://github.com/wujiawei906/dsh-env-doctor
+```
+
+安装器用 `git ls-remote` / `git clone` 拉取仓库，所以这台设备要能访问 github.com。
+如果本机 git 配了一条失效代理（`http.<url>.proxy` 指向没启动的本地端口），
+`git ls-remote` 会直接失败；可临时用一份干净的 git 配置安装（只影响当前会话）：
+
+```powershell
+$clean = "$env:TEMP\gitconfig-clean"
+Set-Content $clean "[user]`n`tname = you`n`temail = you@example.com"
+$env:GIT_CONFIG_GLOBAL = $clean
+dsh plugin --profile desktop add git+https://github.com/wujiawei906/dsh-env-doctor
 ```
 
 开发时也可以用本地目录：`dsh plugin --profile desktop add C:\path\to\dsh-env-doctor`，
