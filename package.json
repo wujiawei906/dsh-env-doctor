@@ -19,7 +19,8 @@
     "lib",
     "locale",
     "icon.svg",
-    "README.md"
+    "README.md",
+    "cordis.patch.yml"
   ],
   "peerDependencies": {
     "@deepseek-ai/dsh-tools": ">=0.2.0-rc.2 <0.3.0"
