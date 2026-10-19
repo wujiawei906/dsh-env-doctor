@@ -1,0 +1,32 @@
+{
+  "name": "@local/dsh-env-doctor",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Reads a project's manifests, judges whether this device's runtime environment is complete, and repairs what it can.",
+  "meta": {
+    "title": "Environment Doctor",
+    "description": "Inspects a project directory, checks runtimes, dependencies and environment variables against its manifests, then installs and configures whatever is missing."
+  },
+  "icon": "./icon.svg",
+  "exports": {
+    ".": "./index.js",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "index.js",
+    "lib",
+    "locale",
+    "icon.svg",
+    "README.md"
+  ],
+  "peerDependencies": {
+    "@deepseek-ai/dsh-tools": ">=0.2.0-rc.2 <0.3.0"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}

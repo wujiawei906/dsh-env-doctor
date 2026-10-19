@@ -1,0 +1,3 @@
+- insert:
+    - id: env-doctor
+      name: '@local/dsh-env-doctor'

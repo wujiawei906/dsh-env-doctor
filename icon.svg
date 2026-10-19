@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" role="img" aria-label="Environment Doctor">
+  <rect x="2" y="5" width="28" height="22" rx="4" fill="none" stroke="currentColor" stroke-width="2" />
+  <path d="M6 12h6M6 17h9M6 22h5" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+  <path d="M21 15.5v4.5M18.5 18h5" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+</svg>

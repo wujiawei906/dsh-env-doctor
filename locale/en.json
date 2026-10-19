@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Environment Doctor",
+    "description": "Reads a project's manifests, judges whether this device is configured for it, and installs or configures whatever is missing."
+  }
+}
